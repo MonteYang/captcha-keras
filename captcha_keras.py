@@ -12,7 +12,7 @@ from tqdm import tqdm
 
 
 
-def gen(batch_size=16):
+def gen(batch_size=16, height=80, width=170, n_len=4, n_class=36):
     """
     生成器，每次迭代生成32张验证码数据。
     :param batch_size:
@@ -20,6 +20,8 @@ def gen(batch_size=16):
         :X: of shape (batch_size=32, height=80, width=170, 3)
         :y: one-hot, of shape (4, batch_size=32, number of classes=36)
     """
+    characters = string.digits + string.ascii_uppercase
+
     X = np.zeros((batch_size, height, width, 3), dtype=np.uint8)
     y = [np.zeros((batch_size, n_class), dtype=np.uint8) for i in range(n_len)]
     generator = ImageCaptcha(width=width, height=height)
@@ -34,6 +36,8 @@ def gen(batch_size=16):
 
 
 def decode(y):
+    characters = string.digits + string.ascii_uppercase
+
     y = np.argmax(np.array(y), axis=2)[:,0]
     return ''.join([characters[x] for x in y])
 
@@ -82,7 +86,8 @@ def evaluate(model, batch_num=20):
         y_pred = model.predict(X)
         y_pred = np.argmax(y_pred, axis=2).T
         y_true = np.argmax(y, axis=2).T
-        batch_acc += np.mean(map(np.array_equal, y_true, y_pred))
+        batch_acc += np.mean(list(map(np.array_equal, y_true, y_pred)))
+
     return batch_acc / batch_num
 
 
