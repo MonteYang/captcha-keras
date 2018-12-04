@@ -107,11 +107,19 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
     <option name="y" value="-6" />
     <option name="width" value="960" />
     <option name="height" value="1086" />
+=======
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="42" />
+    <option name="y" value="119" />
+    <option name="width" value="960" />
+    <option name="height" value="1020" />
+>>>>>>> aa060495b01c40ec65ba0ba0a7b3d665a8b6595b
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -178,6 +186,9 @@
       <module name="keras-captcha" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
