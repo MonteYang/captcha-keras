@@ -12,7 +12,7 @@ from tqdm import tqdm
 
 
 
-def gen(batch_size=32):
+def gen(batch_size=16):
     """
     生成器，每次迭代生成32张验证码数据。
     :param batch_size:
@@ -100,5 +100,6 @@ if __name__ == '__main__':
     y_pred = model.predict(X)
     plt.title('real: %s\npred:%s' % (decode(y), decode(y_pred)))
     plt.imshow(X[0], cmap='gray')
+    plt.show()
 
     print("模型总体准确率：", evaluate(model))
