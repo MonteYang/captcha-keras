@@ -170,12 +170,7 @@ def evaluate(model, batch_num=200):
         X, y = next(generator)
         y_pred = model.predict(X)
         y_pred = np.argmax(y_pred, axis=2).T
-        y_true = np.argmax(y, axis=2).T二、VGG的网络结构
-下图是来自论文《Very Deep Convolutional Networks for Large-Scale Image Recognition》（基于甚深层卷积网络的大规模图像识别）的VGG网络结构，正是在这篇论文中提出了VGG，如下图：
- 
-在这篇论文中分别使用了A、A-LRN、B、C、D、E这6种网络结构进行测试，这6种网络结构相似，都是由5层卷积层、3层全连接层组成，其中区别在于每个卷积层的子层数量不同，从A至E依次增加（子层数量从1到4），总的网络深度从11层到19层（添加的层以粗体显示），表格中的卷积层参数表示为“conv⟨感受野大小⟩-通道数⟩”，例如con3-128，表示使用3x3的卷积核，通道数为128。为了简洁起见，在表格中不显示ReLU激活功能。
-其中，网络结构D就是著名的VGG16，网络结构E就是著名的VGG19。
-
+        y_true = np.argmax(y, axis=2).T
 
         batch_acc += np.mean(list(map(np.array_equal, y_true, y_pred)))
 
