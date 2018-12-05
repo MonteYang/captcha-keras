@@ -9,7 +9,7 @@ from utils import mkdir
 
 def load_model_():
     """
-    载入之前徐莲好的模型
+    载入之前训练好的模型
     :return:
     """
 
