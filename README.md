@@ -36,9 +36,14 @@ def gen(batch_size=16, height=80, width=170, n_len=4, n_class=36):
         yield X, y
 
 ```
-使用生成器通过 next 函数调用即可，生成单个的验证码图片如下：
+使用生成器通过 next 函数调用即可，生成的验证码图片如下：
 
 ![](./data_examples/C52N.jpg)
+![](./data_examples/0Y4O.jpg)
+![](./data_examples/JJO4.jpg)
+
+更多的验证码图片在`./data_examples/` 文件夹中。
+
 
 
 ## one-hot 解码
@@ -140,7 +145,7 @@ plt.imshow(X[0], cmap='gray')
 ![](./test_results/predict_0.jpg)
 
 ### 更多的测试
-测试结果在`./test_results/` 文件夹中
+测试结果在`./test_results/` 文件夹中。
 ![](./test_results/predict_1.jpg)
 ![](./test_results/predict_2.jpg)
 ![](./test_results/predict_3.jpg)
