@@ -137,7 +137,14 @@ plt.title('real: %s\npred:%s'%(decode(y), decode(y_pred)))
 plt.imshow(X[0], cmap='gray')
 ```
 
-![](test_results/predict_0.jpg)
+![](./test_results/predict_0.jpg)
+
+### 更多的测试
+测试结果在`./test_results/` 文件夹中
+![](./test_results/predict_1.jpg)
+![](./test_results/predict_2.jpg)
+![](./test_results/predict_3.jpg)
+![](./test_results/predict_7.jpg)
 
 ## 计算模型总体准确率
 
